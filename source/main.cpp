@@ -13,6 +13,8 @@ void RenderGame()
 
 int main()
 {
+    defaultExceptionHandler();
+
     srand(time(NULL));
 
     // Prepare graphics
