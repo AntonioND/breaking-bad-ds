@@ -27,8 +27,10 @@ Game::Game()
     irqSet(IRQ_VBLANK, NE_VBLFunc);
     irqSet(IRQ_HBLANK, NE_HBLFunc);
 
+#ifndef __BLOCKSDS__
     // Prepare NiFi
     nifiPrepare();
+#endif
 
     // Setup sound
     sound.LoadSound();

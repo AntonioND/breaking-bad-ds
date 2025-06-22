@@ -38,6 +38,7 @@ int mpStatus = MP_CLIENT_SEARCHING;
 
 void joinMultiplayer(bool hostRoom)
 {
+#ifndef __BLOCKSDS__
 	nifiInit();
 	if (hostRoom)
 	{
@@ -50,6 +51,7 @@ void joinMultiplayer(bool hostRoom)
 		tryJoinRoom = true;
 		resetNifiValues();
 	}
+#endif
 }
 
 void disableMultiplayer()
@@ -154,11 +156,13 @@ void resetNifiValues()
  */
 void nifiPrepare()
 {
+#ifndef __BLOCKSDS__
 	// Changes how packets are handled
 	Wifi_SetRawPacketMode(PACKET_MODE_NIFI);
 
 	// Init Wifi without automatic settings
 	Wifi_InitDefault(false);
+#endif
 }
 
 /**
