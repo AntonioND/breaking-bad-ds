@@ -11,7 +11,9 @@ int Player::Load(Character character, NE_Animation *animations[2])
     this->lyingDown = false;
 
     model = NE_ModelCreate(NE_Animated);
+    assert(model);
     material = NE_MaterialCreate();
+    assert(material);
     animation[0] = animations[0];
     animation[1] = animations[1];
 

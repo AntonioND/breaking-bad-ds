@@ -95,6 +95,7 @@ void Game::Prepare3DGraphics()
 
     // Create camera
     camera = NE_CameraCreate();
+    assert(camera);
 }
 
 void Game::UpdateCamera()
@@ -702,6 +703,7 @@ void Game::LoadLabScene()
     // Load player animations
     playerAnimations[0] = NE_AnimationCreate();
     playerAnimations[1] = NE_AnimationCreate();
+    assert(playerAnimations[0] && playerAnimations[1]);
     if (NE_AnimationLoadFAT(playerAnimations[0], "model/player_idle.dsa") == 0 || NE_AnimationLoadFAT(playerAnimations[1], "model/player_walk.dsa") == 0)
     {
         consoleDemoInit();

@@ -10,6 +10,7 @@ int Map::Load()
     pipePos[1] = -78;
 
     material = NE_MaterialCreate();
+    assert(material);
     if (NE_MaterialTexLoadFAT(material, NE_A1RGB5, 256, 256, NE_TEXGEN_TEXCOORD, "model/superlab_tex.bin") == 0)
     {
         consoleDemoInit();
@@ -27,6 +28,7 @@ int Map::Load()
     for (int i = 0; i < MODEL_COUNT; i++)
     {
         models[i] = NE_ModelCreate(NE_Static);
+        assert(models[i]);
         if (NE_ModelLoadStaticMeshFAT(models[i], modelPaths[i]) == 0)
         {
             consoleDemoInit();

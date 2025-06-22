@@ -9,12 +9,15 @@ Menu::Menu()
 int Menu::Load()
 {
     skybox = NE_ModelCreate(NE_Static);
+    assert(skybox);
     skyboxMaterial = NE_MaterialCreate();
 
     logo = NE_ModelCreate(NE_Static);
+    assert(logo);
     logoMaterial = NE_MaterialCreate();
 
     text = NE_ModelCreate(NE_Static);
+    assert(text);
     textMaterial = NE_MaterialCreate();
 
     // Load assets from the filesystem

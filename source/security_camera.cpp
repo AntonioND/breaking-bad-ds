@@ -7,7 +7,9 @@ SecurityCamera::SecurityCamera()
 int SecurityCamera::Load()
 {
     model = NE_ModelCreate(NE_Static);
+    assert(model);
     material = NE_MaterialCreate();
+    assert(material);
 
     // Load assets from the filesystem
     if (NE_ModelLoadStaticMeshFAT(model, "model/camera.dl") == 0)
