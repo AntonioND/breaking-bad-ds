@@ -1,3 +1,6 @@
+#include <cstdlib>
+#include <ctime>
+
 #include "game.h"
 
 const bool DEBUG_MODE = false;
@@ -10,7 +13,7 @@ void RenderGame()
 
 int main()
 {
-    srand(NULL);
+    srand(time(NULL));
 
     // Prepare graphics
     game.Prepare3DGraphics();
